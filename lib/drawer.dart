@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
-import 'package:semester_project/buttonnavigation.dart';
+import 'package:url_launcher/url_launcher.dart';
 class drawer_ extends StatelessWidget {
   const drawer_({super.key});
 
@@ -26,7 +26,8 @@ class drawer_ extends StatelessWidget {
       ),
 
       appBar: AppBar(
-        title: const Text('DATA APP', style: TextStyle(fontSize: 25),),
+        title: const Text('Memes', style: TextStyle(fontSize: 25),),
+        backgroundColor: Colors.blueGrey,
         actions: [
           IconButton(
             icon: const Icon(Icons.search),
@@ -68,7 +69,24 @@ class drawer_ extends StatelessWidget {
         //   ])
         // ],
       ),
-
+      body: Padding(
+        padding: const EdgeInsets.all(10.0),
+        child: Column(
+          children: [
+            TextField(
+              decoration: InputDecoration(
+                contentPadding: EdgeInsets.symmetric(vertical: 10.0,horizontal: 10.0),
+                hintText: '  search',
+                suffixIcon: const Icon(Icons.search),
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(25.0),
+                  borderSide: const BorderSide(),
+                )
+              ),
+            )
+          ],
+        ),
+      ),
       drawer: Container(
         width: 290,
         child: Drawer(
@@ -85,11 +103,12 @@ class drawer_ extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
+
                     Image(
                       image: AssetImage('images/logo.png'),
                       height: 70,
                     ),
-                    Text('DATA APP',
+                    Text('Memes',
                       style:
                       TextStyle(fontSize: 15,
                           color: Colors.white),
@@ -108,6 +127,7 @@ class drawer_ extends StatelessWidget {
                         ),
                       ],
                     ),
+
                   ],
                 ),
               ),
@@ -141,8 +161,10 @@ class drawer_ extends StatelessWidget {
 
                   size: 25,
                 ),
+
                 title: Text(
                   'Categories',
+
 
                   style: TextStyle(
                     fontSize: 13,
@@ -193,6 +215,9 @@ class drawer_ extends StatelessWidget {
                   //changeselected(0);
                 },
               ),
+              Row(
+
+              ),
               ListTile(
                 //selected: _selected==0,
                 leading: Icon(
@@ -201,18 +226,25 @@ class drawer_ extends StatelessWidget {
 
                   size:25,
                 ),
+
+
                 title: Text(
                   'Contact as',
-
                   style: TextStyle(
                     fontSize: 13,
                     color: Colors.black,
+
                   ),
+
                 ),
+
+
+                //
                 onTap: (){
                   //changeselected(0);
                 },
               ),
+
               new Divider(
                 thickness: 3,
                 indent:1,

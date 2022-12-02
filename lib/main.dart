@@ -1,7 +1,12 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:semester_project/drawer.dart';
 import 'package:semester_project/login.dart';
 import 'package:semester_project/register.dart';
+import 'package:semester_project/url.dart';
+import 'package:semester_project/homescreen.dart';
+import 'package:semester_project/splashscreen.dart';
 void main() {
   runApp(const MyApp());
 }
@@ -9,27 +14,35 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
+
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      initialRoute: 'login',
-      routes: {
-        'login': (contaxt)=>mylogin(),
-        'register': (contaxt)=>myregister(),
-        'drawer': (contaxt)=>drawer_(),
-      },
+      // initialRoute: 'login',
+     // routes: {
+     //   //   'login': (contaxt)=>mylogin(),
+     //   //   'register': (contaxt)=>myregister(),
+     //   'drawer':  (contaxt)=>drawer_(),
+     //   'homescreen': (contaxt)=>homescreen(),
+     //   'buttonnavigatiom': (contaxt)=>buttonnavigation(),
+     //   //'url' : (context)=>myUrl(),
+     //
+     // },
+
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+      title: 'Memes',
       theme: ThemeData(
 
           //primarySwatch: Colors.blue,
           ),
 
-     // home: const drawer_(),
+    //home: const drawer_(),
+     // home: const homescreen(),
+     //home: const drawer_(),
+      home: const SplashScreen(),
 
-
-
+      //home: const myUrl(),
       // home: const (title: 'project'),
     );
   }
