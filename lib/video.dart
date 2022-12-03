@@ -19,6 +19,13 @@ class _videoState extends State<video> {
       //   //       bottomRight: Radius.circular(25),
       //   //     )
       // ),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.add),
+        onPressed: (){
+
+          print('pressed');
+        },
+      ),
       body: Center(
         child: Text('video',style:TextStyle(fontSize: 20,fontWeight: FontWeight.bold)),
       ),

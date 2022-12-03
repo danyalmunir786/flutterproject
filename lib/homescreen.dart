@@ -331,13 +331,7 @@ class _homescreenState extends State<homescreen> {
 
         ),
 
-        // floatingActionButton: FloatingActionButton(
-        //   child: Icon(Icons.add),
-        //   onPressed: (){
-        //
-        //     print('pressed');
-        //   },
-        // ),
+
         body: TabBarView(
           children:<Widget>[
             photo(),

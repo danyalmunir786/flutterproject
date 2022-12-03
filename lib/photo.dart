@@ -19,6 +19,13 @@ class _photoState extends State<photo> {
       //   //       bottomRight: Radius.circular(25),
       //   //     )
       //   ),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.add),
+        onPressed: (){
+
+          print('pressed');
+        },
+      ),
         body: Center(
           child: Text('photo',style:TextStyle(fontSize: 20,fontWeight: FontWeight.bold)),
         ),
