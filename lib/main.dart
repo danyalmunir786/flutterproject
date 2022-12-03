@@ -7,6 +7,7 @@ import 'package:semester_project/register.dart';
 import 'package:semester_project/url.dart';
 import 'package:semester_project/homescreen.dart';
 import 'package:semester_project/splashscreen.dart';
+import 'package:semester_project/url.dart';
 void main() {
   runApp(const MyApp());
 }
@@ -42,7 +43,7 @@ class MyApp extends StatelessWidget {
      //home: const drawer_(),
       home: const SplashScreen(),
 
-      //home: const myUrl(),
+
       // home: const (title: 'project'),
     );
   }

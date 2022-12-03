@@ -111,10 +111,10 @@ class _UrlState extends State<Url> {
                   style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Colors.red),),
                   icon: Icon(Icons.email,textDirection: TextDirection.ltr),
                   onPressed: (){
-                    email();
+                    gmail();
                   },
                   label: Center(
-                      child: Text("EMAIL ",style: TextStyle(fontSize: 20,color: Colors.black),)),),
+                      child: Text("GMAIL ",style: TextStyle(fontSize: 20,color: Colors.black),)),),
               ),
 
             ),
@@ -156,36 +156,36 @@ class _UrlState extends State<Url> {
 
   }
   Future<void> calling() async {
-    const url='tel:+923446183834';
+    const url='tel:+923101500725';
     if (!await launchUrl(Uri.parse(url))) {
       throw 'Could not launch $url';
     }
   }
   Future<void> sms() async {
-    const sms='sms:+923446183834';
+    const sms='sms:+923101500725';
     if (!await launchUrl(Uri.parse(sms))) {
       throw 'Could not launch $sms';
     }
   }
   celling()async
   {
-    const url='tel:+923446183834';
+    const url='tel:+923101500725';
     launchUrl(Uri.parse(url));
   }
   Future<void> whatsapp() async {
-    const wurl="whatsapp://send?phone=+923446183834&text=How I can help You!";
+    const wurl="whatsapp://send?phone=+923101500725&text=How I can help You!";
     if (!await launchUrl(Uri.parse(wurl))) {
       throw 'Could not launch $wurl';
     }
-  }  Future<void> email() async {
-    const email="rashidimran4765@gmail.com?subject=Subject&body=type your message";
+  }  Future<void> gmail() async {
+    const email="dhanyalmunir851@gmail.com?subject=Subject&body=type your message";
     if (!await launchUrl(Uri.parse(email))) {
-      throw 'Could not launch $email';
+      throw 'Could not launch $gmail';
     }
   }
   facebook()async
   {
-    final Uri facebook = Uri.parse('https://www.facebook.com/Chohan765');
+    final Uri facebook = Uri.parse('https://www.facebook.com/Muhammad Dhanyal Munir');
     if (!await launchUrl((facebook))) {
       throw 'Could not launch $facebook';
     }

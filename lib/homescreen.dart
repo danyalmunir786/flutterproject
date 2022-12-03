@@ -1,7 +1,11 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:semester_project/homescreen.dart';
+import 'package:semester_project/photo.dart';
 import 'package:semester_project/splashscreen.dart';
+import 'package:semester_project/url.dart';
+import 'package:semester_project/video.dart';
+import 'package:semester_project/potery.dart';
 
 class homescreen extends StatefulWidget {
   const homescreen({Key? key}) : super(key: key);
@@ -28,6 +32,12 @@ class _homescreenState extends State<homescreen> {
         //   ],
         // ),
         appBar: AppBar(
+          shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.only(
+                bottomLeft: Radius.circular(25),
+                bottomRight: Radius.circular(25),
+              )
+          ),
           title: Text(
             'Memes',style:TextStyle(fontSize: 20,fontWeight: FontWeight.bold),
           ),
@@ -69,6 +79,7 @@ class _homescreenState extends State<homescreen> {
             indicatorColor: Colors.white,
             labelPadding: EdgeInsets.symmetric(horizontal: 30),
             tabs: [
+
              // Tab(icon: Icon(Icons.camera),),
               Tab(child: Text('photos')),
               Tab(child: Text('Videos')),
@@ -238,7 +249,11 @@ class _homescreenState extends State<homescreen> {
 
                   //
                   onTap: (){
-                    //changeselected(0);
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const Url()),
+                    );
+
                   },
                 ),
 
@@ -316,55 +331,64 @@ class _homescreenState extends State<homescreen> {
 
         ),
 
-        floatingActionButton: FloatingActionButton(
-          child: Icon(Icons.add),
-          onPressed: (){
-            print('pressed');
-          },
-        ),
+        // floatingActionButton: FloatingActionButton(
+        //   child: Icon(Icons.add),
+        //   onPressed: (){
+        //
+        //     print('pressed');
+        //   },
+        // ),
         body: TabBarView(
-          children: [
-            // Center(
-            ////   child: Text(''),),
-            Column(mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Icon(Icons.photo, color: Colors.blue,),
-                SizedBox(
-                  height: 20,
-                ),
-                Padding(padding: EdgeInsets.symmetric(horizontal: 40),
-                  child: Text("photos on it",textAlign: TextAlign.center,),),
-              ],
-            ),            Column(mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Icon(Icons.video_camera_front, color: Colors.blue,),
-              SizedBox(
-                height: 20,
-              ),
-              Padding(padding: EdgeInsets.symmetric(horizontal: 40),
-              child: Text("Videos on it",textAlign: TextAlign.center,),),
-            ],
-            ),
+          children:<Widget>[
+            photo(),
+            video(),
+            potery(),
 
-            Column(mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Icon(Icons.text_snippet, color: Colors.blue,),
-                SizedBox(
-                  height: 20,
-                ),
-                Padding(padding: EdgeInsets.symmetric(horizontal: 40),
-                  child: Text("poetry on it",textAlign: TextAlign.center,),),
-              ],
-            ),
-            // ListView.builder(
-            //     Column(mainAxisAlignment: MainAxisAlignment.center,
-            //   children: [
-            //     Icon(Icons.person:50 , color: Colors.blue),
+
+
             //
+            // // Center(
+            // ////   child: Text(''),),
+            // Column(mainAxisAlignment: MainAxisAlignment.center,
+            //   children:<Widget>[
+            //     Icon(Icons.photo, color: Colors.blue,),
             //
-            //   ],
+            //     SizedBox(
+            //       height: 20,
             //     ),
-              
+            //     Padding(padding: EdgeInsets.symmetric(horizontal: 40),
+            //       child: Text("photos on it",textAlign: TextAlign.center,),),
+            //   ],
+            // ),            Column(mainAxisAlignment: MainAxisAlignment.center,
+            // children: [
+            //   Icon(Icons.video_camera_front, color: Colors.blue,),
+            //   SizedBox(
+            //     height: 20,
+            //   ),
+            //   Padding(padding: EdgeInsets.symmetric(horizontal: 40),
+            //   child: Text("Videos on it",textAlign: TextAlign.center,),),
+            // ],
+            // ),
+            //
+            // Column(mainAxisAlignment: MainAxisAlignment.center,
+            //   children: [
+            //     Icon(Icons.text_snippet, color: Colors.blue,),
+            //     SizedBox(
+            //       height: 20,
+            //     ),
+            //     Padding(padding: EdgeInsets.symmetric(horizontal: 40),
+            //       child: Text("poetry on it",textAlign: TextAlign.center,),),
+            //   ],
+            // ),
+            // // ListView.builder(
+            // //     Column(mainAxisAlignment: MainAxisAlignment.center,
+            // //   children: [
+            // //     Icon(Icons.person:50 , color: Colors.blue),
+            // //
+            // //
+            // //   ],
+            // //     ),
+
 
           ],
         ),
