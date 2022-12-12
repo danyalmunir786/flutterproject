@@ -1,15 +1,20 @@
 import 'dart:convert';
 
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:semester_project/drawer.dart';
-import 'package:semester_project/login.dart';
-import 'package:semester_project/register.dart';
 import 'package:semester_project/url.dart';
 import 'package:semester_project/homescreen.dart';
 import 'package:semester_project/splashscreen.dart';
 import 'package:semester_project/url.dart';
-void main() {
+import 'package:semester_project/signup.dart';
+import 'package:semester_project/signin.dart';
+void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+
   runApp(const MyApp());
+
 }
 
 class MyApp extends StatelessWidget {
@@ -42,6 +47,11 @@ class MyApp extends StatelessWidget {
      // home: const homescreen(),
      //home: const drawer_(),
       home: const SplashScreen(),
+      //home: const mylogin(),
+      //home: const myregister(),
+      //home: const signup(),
+      //home: const signin(),
+
 
 
       // home: const (title: 'project'),

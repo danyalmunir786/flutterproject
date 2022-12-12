@@ -1,11 +1,15 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:semester_project/homescreen.dart';
 import 'package:semester_project/photo.dart';
+import 'package:semester_project/signin.dart';
 import 'package:semester_project/splashscreen.dart';
 import 'package:semester_project/url.dart';
+import 'package:semester_project/utils.dart';
 import 'package:semester_project/video.dart';
 import 'package:semester_project/potery.dart';
+
 
 class homescreen extends StatefulWidget {
   const homescreen({Key? key}) : super(key: key);
@@ -15,6 +19,7 @@ class homescreen extends StatefulWidget {
 }
 
 class _homescreenState extends State<homescreen> {
+  final auth=FirebaseAuth.instance;
   @override
   Widget build(BuildContext context) {
 
@@ -68,8 +73,30 @@ class _homescreenState extends State<homescreen> {
                 child: Text('Categories'),
               ),
               PopupMenuItem<int>(
+                  value: 0,
+                  child: Text('Logout'),
+                  onTap: () {
+                    auth.signOut().then((value){
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => signin())
+                      );
+                    }).onError((error, stackTrace){
+                      utils().toashMessage(error.toString());
+                    });
+
+
+                  }
+              ),
+              PopupMenuItem<int>(
                 value: 0,
                 child: Text('Exit'),
+                 onTap: () {
+                   // Navigator.push(
+                   //     context,
+                   //     MaterialPageRoute(builder: (context) => const exi);
+                   // );
+                 }
               ),
             ])
           ],
@@ -158,7 +185,11 @@ class _homescreenState extends State<homescreen> {
                     ),
                   ),
                   onTap: (){
-                    //changeselected(0);
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const homescreen()),
+                    );
+
                   },
                 ),
                 ListTile(
@@ -212,7 +243,7 @@ class _homescreenState extends State<homescreen> {
                     size:25,
                   ),
                   title: Text(
-                    'About as',
+                    'About us',
 
                     style: TextStyle(
                       fontSize: 13,
@@ -237,7 +268,7 @@ class _homescreenState extends State<homescreen> {
 
 
                   title: Text(
-                    'Contact as',
+                    'Contact us',
                     style: TextStyle(
                       fontSize: 13,
                       color: Colors.black,
@@ -318,9 +349,9 @@ class _homescreenState extends State<homescreen> {
                       color: Colors.black,
                     ),
                   ),
-                  // onTap: (){
-                  //   changeselected(0);
-                  // },
+                  onTap: (){
+                    //changeselected(0);
+                  },
 
                 ),
 

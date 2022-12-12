@@ -1,8 +1,10 @@
 import 'dart:async';
 
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:semester_project/homescreen.dart';
-
+import 'package:semester_project/signin.dart';
+import 'package:semester_project/splashscreen_class.dart';
 
 class SplashScreen extends StatefulWidget {
 const SplashScreen({Key? key}) : super(key: key);
@@ -12,16 +14,14 @@ State<SplashScreen> createState() => _SplashScreenState();
 }
 
 class _SplashScreenState extends State<SplashScreen> {
+  splashservies splashscreen=splashservies();
   @override
+
+
   void initState(){ //init means initialize
     super.initState();
-    Timer(
-        Duration(seconds: 5), (){
-      Navigator.pushReplacement(context,
-          MaterialPageRoute(builder: (context) => homescreen(),
-          ));
-    }
-    );
+    splashscreen.issignin(context);
+
 
   }
   Widget build(BuildContext context) {
