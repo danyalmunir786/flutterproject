@@ -9,6 +9,7 @@ import 'package:semester_project/splashscreen.dart';
 import 'package:semester_project/url.dart';
 import 'package:semester_project/signup.dart';
 import 'package:semester_project/signin.dart';
+import 'package:semester_project/video.dart';
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
@@ -51,6 +52,7 @@ class MyApp extends StatelessWidget {
       //home: const myregister(),
       //home: const signup(),
       //home: const signin(),
+      //home: const video(),
 
 
 

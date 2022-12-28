@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:semester_project/homescreen.dart';
+import 'package:semester_project/addvideo.dart';
 
 class video extends StatefulWidget {
   const video({Key? key}) : super(key: key);
@@ -23,12 +24,16 @@ class _videoState extends State<video> {
         child: Icon(Icons.add),
         onPressed: (){
 
-          print('pressed');
+          Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => addvideo())
+          );
+          //print('pressed');
         },
       ),
-      body: Center(
-        child: Text('video',style:TextStyle(fontSize: 20,fontWeight: FontWeight.bold)),
-      ),
+      // body: Center(
+      //   child: Text('video',style:TextStyle(fontSize: 20,fontWeight: FontWeight.bold)),
+      // ),
       //title: Text('photo',style:TextStyle(fontSize: 20,fontWeight: FontWeight.bold)),
 
     );
