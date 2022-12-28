@@ -44,9 +44,9 @@ class MyApp extends StatelessWidget {
           ),
 
     //home: const drawer_(),
-     // home: const homescreen(),
+     home: const homescreen(),
      //home: const drawer_(),
-      home: const SplashScreen(),
+      //home: const SplashScreen(),
       //home: const mylogin(),
       //home: const myregister(),
       //home: const signup(),

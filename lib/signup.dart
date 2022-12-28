@@ -38,7 +38,7 @@ class _signupState extends State<signup> {
 
     }).onError((error, stackTrace){
       debugPrint(error.toString());
-      utils1().toashMessage(error.toString());
+      utils().toashMessage(error.toString());
       // setState(() {
       //   loading=false;
       // });
