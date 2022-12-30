@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:semester_project/homescreen.dart';
-import 'package:semester_project/addvideo.dart';
-
+import 'package:semester_project/videoplayer.dart';
+import 'package:semester_project/videoplayerscreen.dart';
+import 'package:video_player/video_player.dart';
 class video extends StatefulWidget {
   const video({Key? key}) : super(key: key);
 
@@ -26,7 +27,7 @@ class _videoState extends State<video> {
 
           Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => addvideo())
+              MaterialPageRoute(builder: (context) => videoplayerscreen())
           );
           //print('pressed');
         },
