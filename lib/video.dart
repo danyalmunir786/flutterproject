@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:semester_project/addvideo.dart';
 import 'package:semester_project/homescreen.dart';
-import 'package:semester_project/videoplayer.dart';
-import 'package:semester_project/videoplayerscreen.dart';
+import 'package:transparent_image/transparent_image.dart';
 import 'package:video_player/video_player.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+
 class video extends StatefulWidget {
   const video({Key? key}) : super(key: key);
 
@@ -27,11 +29,41 @@ class _videoState extends State<video> {
 
           Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => videoplayerscreen())
+              MaterialPageRoute(builder: (context) => addvideo())
           );
           //print('pressed');
         },
       ),
+      body: StreamBuilder(
+        stream: FirebaseFirestore.instance.collection('videoURLs').snapshots(),
+        builder: (context, snapshot) {
+          return !snapshot.hasData
+              ? Center(
+            child: CircularProgressIndicator(),
+          )
+              : Container(
+            padding: EdgeInsets.all(4),
+            height: 950,
+            width: 950,
+            child: GridView.builder(
+                itemCount: snapshot.data?.docs.length,
+                //  itemCount: snapshot.data.documents.length,
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 1,),
+                itemBuilder: (context, index) {
+                  return Container(
+
+                    margin: EdgeInsets.all(10),
+                    child: FadeInImage.memoryNetwork(
+                        fit: BoxFit.cover,
+                        placeholder: kTransparentImage,
+                        image: snapshot.data?.docs[index].get('url')),
+                  );
+                }),
+          );
+        },
+      ),
+
       // body: Center(
       //   child: Text('video',style:TextStyle(fontSize: 20,fontWeight: FontWeight.bold)),
       // ),

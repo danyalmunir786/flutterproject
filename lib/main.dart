@@ -10,8 +10,8 @@ import 'package:semester_project/url.dart';
 import 'package:semester_project/signup.dart';
 import 'package:semester_project/signin.dart';
 import 'package:semester_project/video.dart';
-import 'package:semester_project/videoplayerscreen.dart';
 import 'package:video_player/video_player.dart';
+import 'package:semester_project/profile.dart';
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
@@ -46,8 +46,10 @@ class MyApp extends StatelessWidget {
           //primarySwatch: Colors.blue,
           ),
 
-    //home: const drawer_(),
-    // home: const homescreen(),
+
+      //home: const drawer_(),
+     //
+       home: const homescreen(),
      //home: const drawer_(),
       //home: const SplashScreen(),
       //home: const mylogin(),
@@ -55,7 +57,7 @@ class MyApp extends StatelessWidget {
       //home: const signup(),
       //home: const signin(),
       //home: const video(),
-      home: const videoplayerscreen(),
+      //home: const videoplayerscreen(),
 
 
 

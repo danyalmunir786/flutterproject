@@ -70,12 +70,15 @@ class _AddImageState extends State<AddImage> {
                           !uploading ? chooseImage() : null),
                     )
                         : Container(
-                      margin: EdgeInsets.all(3),
+                      //height: 200,
+                      margin: EdgeInsets.all(4),
+
+
                       decoration: BoxDecoration(
 
-
                           image: DecorationImage(
-                            image: FileImage(_image[index -1],),
+
+                            image: FileImage(_image[index -1]),
 
 
 

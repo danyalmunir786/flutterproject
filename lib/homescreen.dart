@@ -9,6 +9,8 @@ import 'package:semester_project/url.dart';
 import 'package:semester_project/utils.dart';
 import 'package:semester_project/video.dart';
 import 'package:semester_project/potery.dart';
+import 'package:semester_project/profile.dart';
+
 
 
 class homescreen extends StatefulWidget {
@@ -251,6 +253,11 @@ class _homescreenState extends State<homescreen> {
                     ),
                   ),
                   onTap: (){
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) =>    profile()),
+                    );
+
                     //changeselected(0);
                   },
                 ),

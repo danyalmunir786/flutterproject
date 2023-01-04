@@ -43,14 +43,17 @@ class _photoState extends State<photo> {
           )
               : Container(
             padding: EdgeInsets.all(4),
+            height: 950,
+            width: 950,
             child: GridView.builder(
               itemCount: snapshot.data?.docs.length,
               //  itemCount: snapshot.data.documents.length,
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 3),
+                    crossAxisCount: 1,),
                 itemBuilder: (context, index) {
                   return Container(
-                    margin: EdgeInsets.all(3),
+
+                    margin: EdgeInsets.all(10),
                     child: FadeInImage.memoryNetwork(
                         fit: BoxFit.cover,
                         placeholder: kTransparentImage,
